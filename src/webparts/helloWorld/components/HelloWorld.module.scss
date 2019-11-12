@@ -19,10 +19,35 @@
     // background-color: $ms-color-themeDark;
   }
 
-  .headerRow,.homeQuarterRow {
-   .flex1 {
-     flex: 1;
-   }
+  .homeQuarterRow {
+    .flex1 {
+      flex: 1;
+    }
+  }
+
+  .headerRow {
+    background-color: #52525B;
+    margin: 0;
+    .flex1 {
+      flex: 1;
+    }
+    .flex2 {
+      flex: 2;
+    }
+    .flex3 {
+      flex: 3;
+    }
+    .flex7 {
+      flex: 7;
+    }
+    .toggleContainer {
+      padding-top: 10px;
+      .toggleIcon {
+        top: 2px;
+        position: relative;
+        margin: 0 5px;
+      }
+    } 
   }
 
   .deceasedCheckBox {
@@ -67,6 +92,18 @@
   .addressRow {
     .flex1 {
       flex: 1;
+    }
+  }
+
+  .parentRow {
+    .flex2 {
+      flex: 2;
+    }
+    .flex3 {
+      flex: 3;
+    }
+    .flex7 {
+      flex: 7;
     }
   }
 
@@ -290,6 +327,7 @@
     font-size: 12px;
     overflow-y: scroll;
     max-height: 900px;
+    padding-top: 10px;
   }
   
   
@@ -299,7 +337,7 @@
     box-shadow: 8px 10px 8px #52525B;
     padding: 0px;
   }
-  .contact-header{
+  .contactHeader{
     background-color: #000033;
     height: 34px;
     color: white;
@@ -314,21 +352,18 @@
     color: white;
   }
   .saveicons{
-    margin: 2px;
+    margin: 2px 5px;
     padding: 2px;
     margin-top: 5px;
-  
-    }
-    .deleteicons{
-      margin: 2px;
-      padding: 2px;
-  
-  
-      }
-      .editicons{
-        margin: 2px;
-        padding: 2px;
-      }
+  }
+  .deleteicons{
+    margin: 2px;
+    padding: 2px;
+  }
+  .editicons{
+    margin: 2px;
+    padding: 2px;
+  }
   
       .togglecontrol {
         margin-left: 100px;
@@ -529,7 +564,7 @@
   .form-check-align{
     padding-left: 1rem;
   }
-  .contactcolsize{
+  .contactColSize{
     max-width: 150px;
   }
   .tax{
@@ -569,6 +604,183 @@
       margin-top: -34px;
   
   }
+
+
+
+
+  //Document table start
+  .document-Tabel{
+          
+              
+    .table-Head{
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    border-collapse: collapse; 
+    border-spacing: 0;
+    width: 100%; 
+    thead{  
+      
+      td, th {  
+        border-left: 1px solid black; /* No more visible border */
+        border-right: 1px solid black; /* No more visible border */
+        border-top: 1px solid black; /* No more visible border */
+        height: 30px; 
+        transition: all 0.3s;  /* Simple transition for hover effect */
+        color: black;
+        border-spacing: 0;
+        padding: 5px;
+    }
+    
+    th {  
+        background: #DFDFDF;  /* Darken header a bit */
+        font-weight: bold;
+    }
+    
+    td {  
+        background: #FAFAFA;
+        text-align: center;
+    }
+  }
+  
+  
+  
+  /* Cells in even rows (2,4,6...) are one color */        
+  tr:nth-child(even) td { background: #F1F1F1; }   
+  
+  /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
+  tr:nth-child(odd) td { background: #FEFEFE; } 
+
+    }
+    
+    .table-Body{
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    border-collapse: collapse; 
+    border-spacing: 0;
+    width: 100%; 
+    tbody{  
+      
+      td, th {  
+        border-left: 1px solid black; /* No more visible border */
+        height: 30px; 
+        transition: all 0.3s;  /* Simple transition for hover effect */
+        color: black;
+        border-spacing: 0;
+        padding: 5px;
+    }
+    
+    th {  
+        background: #DFDFDF;  /* Darken header a bit */
+        font-weight: bold;
+    }
+    
+    td {  
+        background: #FAFAFA;
+        text-align: center;
+    }
+  }
+  
+  
+  
+  /* Cells in even rows (2,4,6...) are one color */        
+  tr:nth-child(even) td { background: #F1F1F1; }   
+  
+  /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
+  tr:nth-child(odd) td { background: #FEFEFE; } 
+  tr:nth-last-child() td { background: #FEFEFE; } 
+  
+    }
+      
+
+}
+//Document table end
+
+
+.comments-Tabel{
+    
+        
+  .table-Head{
+   color: #333;
+   font-family: Helvetica, Arial, sans-serif;
+   border-collapse: collapse; 
+   border-spacing: 0;
+   width: 100%; 
+   thead{  
+     
+     td, th {  
+       border-left: 1px solid black; /* No more visible border */
+       border-right: 1px solid black; /* No more visible border */
+       border-top: 1px solid black; /* No more visible border */
+       height: 30px; 
+       transition: all 0.3s;  /* Simple transition for hover effect */
+       color: black;
+       border-spacing: 0;
+       padding: 5px;
+   }
+   
+   th {  
+       background: #DFDFDF;  /* Darken header a bit */
+       font-weight: bold;
+   }
+   
+   td {  
+       background: #FAFAFA;
+       text-align: center;
+   }
+ }
+ 
+ 
+ 
+ /* Cells in even rows (2,4,6...) are one color */        
+ tr:nth-child(even) td { background: #F1F1F1; }   
+ 
+ /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
+ tr:nth-child(odd) td { background: #FEFEFE; } 
+
+  }
+  
+  .table-Body{
+   color: #333;
+   font-family: Helvetica, Arial, sans-serif;
+   border-collapse: collapse; 
+   border-spacing: 0;
+   width: 100%; 
+   tbody{  
+     
+     td, th {  
+       border-left: 1px solid black; /* No more visible border */
+       height: 30px; 
+       transition: all 0.3s;  /* Simple transition for hover effect */
+       color: black;
+       border-spacing: 0;
+       padding: 5px;
+   }
+   
+   th {  
+       background: #DFDFDF;  /* Darken header a bit */
+       font-weight: bold;
+   }
+   
+   td {  
+       background: #FAFAFA;
+       text-align: center;
+   }
+ }
+ 
+ 
+ 
+ /* Cells in even rows (2,4,6...) are one color */        
+ tr:nth-child(even) td { background: #F1F1F1; }   
+ 
+ /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
+ tr:nth-child(odd) td { background: #FEFEFE; } 
+ tr:nth-last-child() td { background: #FEFEFE; } 
+ 
+  }
+     
+
+}
+
   
   
   

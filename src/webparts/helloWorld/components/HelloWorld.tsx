@@ -227,48 +227,42 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
     return (
       <div className={styles.helloWorld}  >        
       <div className="container main-container ">
-        <h5 className="contact-header">Contact</h5>
-        <div className="contact-toolbar">
-          <img src={this.state.save as string}
-            height="20px"
-            width="20px"
-            className="saveicons"
-            alt="saveicon"
-            onMouseOver={()=>this.iconOver('save')}
-            onMouseOut ={()=>this.iconOut('save')}
-          />
-          <img src={this.state.delete1 as string}
-            height="20px"
-            width="20px"
-            className="deleteicon1"
-            alt="deleteicon"
-            onMouseOver={()=>this.iconOver('delete1')}
-            onMouseOut ={()=>this.iconOut('delete1')}
-          />
+        <h5 className={styles.contactHeader}>Contact</h5>
+        <div className={`${styles.row} ${styles.headerRow}`}>
+          <div className={styles.flex3}>
+            <img src={this.state.save as string}
+              height="20px"
+              width="20px"
+              className={styles.saveicons}
+              alt="saveicon"
 
-          <div className="togglecontrol">
-            {/* <div className="row toggleupperspace"> */}
-            <div className={`${styles.row} ${styles.headerRow}`}>
-              <div>
-                <span className={styles.togglespan}>Individuals</span>
-              </div>
-              <div>
-                <img src={toggle_ico as string}
-                  height="25px"
-                  width="25px"
-                  className="toggleicon"
-                  alt="toggleicon"
-                />
-              </div>
-              &nbsp;
-              &nbsp;
-              <div>
-                <span className={styles.togglespan}>Entities</span>
-              </div>
-            </div>
+              onMouseOver={()=>this.iconOver('save')}
+              onMouseOut ={()=>this.iconOut('save')}
+            />
+            <img src={this.state.delete1 as string}
+              height="20px"
+              width="20px"
+              alt="deleteicon"
+              className={styles.saveicons}
+              onMouseOver={()=>this.iconOver('delete1')}
+              onMouseOut ={()=>this.iconOut('delete1')}
+            />
           </div>
+          <div className={`${styles.flex3} ${styles.toggleContainer}`}>
+            <span className={styles.togglespan}>Individuals</span>
+            <img src={toggle_ico as string}
+              height="12px"
+              width="25px"
+              className={styles.toggleIcon}
+              alt="toggleicon"
+              // onClick={this.toggleForms}
+            />
+             <span className={styles.togglespan}>Entities</span>
+          </div>
+          <div className={styles.flex7} ></div>
+          
         </div>
-        <div className="container myform">
+        <div className={styles.myform}>
           <div className= "namemargin"></div>
           <h5 className={styles.formHeading}>Name</h5>
           <div className={styles.deceasedCheckBox}>
@@ -280,19 +274,19 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
             </span>
           </div>
           <div className={`${styles.row} ${styles.namesRow}`}>
-            <div className={`${styles.flex2} ${styles.contactcolsize}`}>
+            <div className={`${styles.flex2} ${styles.contactColSize}`}>
               <div className={styles["ms-TextField"]}>
                 <label className={styles["ms-Label"]} htmlFor="formGroupExampleInput">First Name <span className="required" > *</span></label>
                 <input type="text" className={styles["ms-TextField-field"]} id="formGroupExampleInput" placeholder=" " />
               </div>
             </div>
-            <div className={`${styles.flex2} ${styles.contactcolsize}`}>
+            <div className={`${styles.flex2} ${styles.contactColSize}`}>
               <div className={styles["ms-TextField"]}>
               <label className={styles["ms-Label"]} htmlFor="formGroupExampleInput">Middle Name</label>
                 <input type="text" className={styles["ms-TextField-field"]} id="formGroupExampleInput" placeholder=" " />
               </div>
             </div>
-            <div className={`${styles.flex2} ${styles.contactcolsize}`}>
+            <div className={`${styles.flex2} ${styles.contactColSize}`}>
               <div className={styles["ms-TextField"]}>
               <label className={styles["ms-Label"]} htmlFor="formGroupExampleInput">Last Name <span className="required" > *</span></label>
                 <input type="text" className={styles["ms-TextField-field"]} id="formGroupExampleInput" placeholder=" " />
@@ -306,8 +300,10 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
             </div>
           </div>
           <hr className="horizontalSeparator"/>
+
           <h5 className={styles.formHeading} >Contact</h5>
           <div className={`${styles.row} ${styles.contactRow} `}>
+
             <div className={styles.flex2}>
               <div className={`${styles["ms-TextField"]} ${styles.homephn} `} >
                 <label className={styles["ms-Label"]} htmlFor="formGroupExampleInput">Home Phone</label>
@@ -350,6 +346,7 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
           </div>
             
           <hr className="horizontalSeparator"/>
+
           <h5>Address</h5>
           <div className={`${styles.row} ${styles.addressRow}`}>
             <div className={styles.flex1}>
@@ -503,9 +500,9 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
           <hr className="horizontalSeparator" />
           
           <h5>Parent (Individual or Entity)</h5>
-          <div className={`${styles.row}`}>
-              <div className={styles["col-3"]}>
-                <div className="form-group">
+            <div className={`${styles.row} ${styles.parentRow}`}>
+              <div className={styles.flex7}>
+                <div className={styles["ms-TextField"]}>
                   {/*  <Typeahead
                   selected={this.state.selected}
                   id="basic-example"
@@ -513,223 +510,221 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
                   options={parents}
                   placeholder="Choose..."
                 /> */}
+                <input className={styles["ms-TextField-field"]} type="text" />
                 </div>
-                 <div
-                className={`${styles["col-2"]} ${styles["usericon-align"]}}`}>
+              </div>
+              <div
+                className={`${styles.flex2} ${styles["usericon-align"]}}`}>
                 <i className="fas fa-user"></i>
               </div>
+              <div className={styles.flex3}></div>
             </div>
             <hr className="horizontalSeparator" />
-            <div className={`${styles["col-2"]} ${styles["usericon-align"]}}`}>
-              <i className="fas fa-user"></i>
-            </div>
-          </div>
-          <hr className="horizontalSeparator" />
           
-          <h5>Comments</h5>
-          <div>
-            <img
-              src={this.state.edit as string}
-              height="18px"
-              width="18px"
-              className="editicons"
-              alt="editicon"
-              onMouseOver={() => this.iconOver("edit")}
-              onMouseOut={() => this.iconOut("edit")}
-            />
-            &nbsp; &nbsp; &nbsp;
-            <img
-              src={this.state.delete3 as string}
-              height="18px"
-              width="18px"
-              className="deleteicons"
-              alt="deleteicon"
-              onMouseOver={() => this.iconOver("delete3")}
-              onMouseOut={() => this.iconOut("delete3")}
-            />
-          </div>
-          <div className={`${styles["ms-TextField"]} ${styles["table-input"]}`}>
-            <div className="form-group custom-form-input">
-              <span>
-                <input
-                  type="text"
-                  className={`${styles["ms-TextField-field"]} ${styles["table-input"]}`}
-                  ref={node => (this.refe2 = node)}
-                  value={this.state.selectedComment["_gcomment"]}
-                  id="formGroupExampleInput"
-                  placeholder=" "
-                  onChange={e => this.changeComment(e)}
-                />
-              </span>
-              <span>
-                <img
-                  src={this.state.plus as string}
-                  height="18px"
-                  width="18px"
-                  className="plusicon"
-                  alt="plusicon"
-                  onMouseOver={() => this.iconOver("plus")}
-                  onMouseOut={() => this.iconOut("plus")}
-                  onClick={this.saveComments}
-                />
-              </span>
+            <h5>Comments</h5>
+            <div>
+              <img
+                src={this.state.edit as string}
+                height="18px"
+                width="18px"
+                className="editicons"
+                alt="editicon"
+                onMouseOver={() => this.iconOver("edit")}
+                onMouseOut={() => this.iconOut("edit")}
+              />
+              &nbsp; &nbsp; &nbsp;
+              <img
+                src={this.state.delete3 as string}
+                height="18px"
+                width="18px"
+                className="deleteicons"
+                alt="deleteicon"
+                onMouseOver={() => this.iconOver("delete3")}
+                onMouseOut={() => this.iconOut("delete3")}
+              />
             </div>
-          </div>
+            <div
+              className={`${styles["ms-TextField"]} ${styles["table-input"]}`}
+            >
+              <div className="form-group custom-form-input">
+                <span>
+                  <input
+                    type="text"
+                    className={`${styles["ms-TextField-field"]} ${styles["table-input"]}`}
+                    ref={node => (this.refe2 = node)}
+                    value={this.state.selectedComment["_gcomment"]}
+                    id="formGroupExampleInput"
+                    placeholder=" "
+                    onChange={e => this.changeComment(e)}
+                  />
+                </span>
+                <span>
+                  <img
+                    src={this.state.plus as string}
+                    height="18px"
+                    width="18px"
+                    className="plusicon"
+                    alt="plusicon"
+                    onMouseOver={() => this.iconOver("plus")}
+                    onMouseOut={() => this.iconOut("plus")}
+                    onClick={this.saveComments}
+                  />
+                </span>
+              </div>
+            </div>
 
-          <div className={`${styles["comments-Tabel"]}`}>
-            <table className={styles["table-Head"]}>
-              <thead>
-                <tr>
-                  <th scope="row">
-                    <div className="form-check form-check-align">
-                      <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="gridCheck"
-                      />
-                    </div>
-                  </th>
-                  <th scope="col">General comment regarding Individual</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Who</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-
-          <div
-            className={` ${styles["scroll-table"]} ${styles["comments-Tabel"]}`}
-          >
-            <table className={styles["table-Body"]}>
-              <tbody>
-                {this.state.comments.map(row => (
+            <div className={`${styles["comments-Tabel"]}`}>
+              <table className={styles["table-Head"]}>
+                <thead>
                   <tr>
-                    <th scope="row">
+                    <th>
                       <div className="form-check form-check-align">
                         <input
                           className="form-check-input"
                           type="checkbox"
                           id="gridCheck"
-                          name="comment_chk"
-                          defaultValue={row.selected}
-                          checked={row.selected}
-                          onChange={e => {
-                            this.selectComment(e, row);
-                          }}
                         />
                       </div>
                     </th>
-
-                    <td>{row.gcomment}</td>
-
-                    <td>{row.date}</td>
-
-                    <td>{row.who}</td>
+                    <th>General comment regarding Individual</th>
+                    <th>Date</th>
+                    <th>Who</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+              </table>
+            </div>
 
-          {this.state.activeForm === 0 && (
-            <div>
-              <hr className="horizontalSeparator" />
-              <h5>Documents</h5>
-              <div>
-                <img
-                  src={this.state.edit2 as string}
-                  height="18px"
-                  width="18px"
-                  className="editicons"
-                  alt="editicon"
-                  onMouseOver={() => this.iconOver("edit2")}
-                  onMouseOut={() => this.iconOut("edit2")}
-                />
-                &nbsp; &nbsp; &nbsp;
-                <img
-                  src={this.state.delete as string}
-                  height="18px"
-                  width="18px"
-                  className="deleteicons"
-                  alt="deleteicon"
-                  onMouseOver={() => this.iconOver("delete")}
-                  onMouseOut={() => this.iconOut("delete")}
-                />
-              </div>
-              <div
-                className={`${styles["ms-TextField"]} ${styles["table-input"]}`}
-              >
-                <input
-                  type="text"
-                  className={`${styles["ms-TextField-field"]} ${styles["table-input"]}`}
-                  ref={node => (this.refe1 = node)}
-                  value={this.state.selectedDocument["_docname"]}
-                  id="formGroupExampleInput"
-                  placeholder=" "
-                  onChange={e => this.changeDocument(e)}
-                />
-                <i
-                  className="far fa-2x fa-plus"
-                  onClick={this.saveDocuments}
-                ></i>
-              </div>
-
-              <div className={styles["document-Tabel"]}>
-                <table className={styles["table-Head"]}>
-                  <thead>
+            <div className={` ${styles["scroll-table"]} ${styles["comments-Tabel"]}`}>
+              <table className={styles["table-Body"]}>
+                <tbody>
+                  {this.state.comments.map(row => (
                     <tr>
-                      <th scope="row">
+                      <td>
                         <div className="form-check form-check-align">
                           <input
                             className="form-check-input"
                             type="checkbox"
                             id="gridCheck"
+                            name="comment_chk"
+                            defaultValue={row.selected}
+                            checked={row.selected}
+                            onChange={e => {
+                              this.selectComment(e, row);
+                            }}
                           />
                         </div>
-                      </th>
-                      <th scope="col">Document Name</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">Who Uploaded</th>
-                    </tr>
-                  </thead>
-                </table>
-              </div>
+                      </td>
 
-              <div
-                className={`${styles["document-Tabel"]} ${styles["scroll-table"]}`}
-              >
-                <table className={styles["table-Body"]}>
-                  <tbody>
-                    {this.state.documents.map(row => (
+                      <td>{row.gcomment}</td>
+
+                      <td>{row.date}</td>
+
+                      <td>{row.who}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {this.state.activeForm === 0 && (
+              <div>
+                <hr className="marigin" />
+                <h5>Documents</h5>
+                <div>
+                  <img
+                    src={this.state.edit2 as string}
+                    height="18px"
+                    width="18px"
+                    className="editicons"
+                    alt="editicon"
+                    onMouseOver={() => this.iconOver("edit2")}
+                    onMouseOut={() => this.iconOut("edit2")}
+                  />
+                  &nbsp; &nbsp; &nbsp;
+                  <img
+                    src={this.state.delete as string}
+                    height="18px"
+                    width="18px"
+                    className="deleteicons"
+                    alt="deleteicon"
+                    onMouseOver={() => this.iconOver("delete")}
+                    onMouseOut={() => this.iconOut("delete")}
+                  />
+                </div>
+                <div
+                  className={`${styles["ms-TextField"]} ${styles["table-input"]}`}
+                >
+                  <input
+                    type="text"
+                    className={`${styles["ms-TextField-field"]} ${styles["table-input"]}`}
+                    ref={node => (this.refe1 = node)}
+                    value={this.state.selectedDocument["_docname"]}
+                    id="formGroupExampleInput"
+                    placeholder=" "
+                    onChange={e => this.changeDocument(e)}
+                  />
+                  <i
+                    className="far fa-2x fa-plus"
+                    onClick={this.saveDocuments}
+                  ></i>
+                </div>
+
+                <div className={styles["document-Tabel"]}>
+                  <table className={styles["table-Head"]}>
+                    <thead>
                       <tr>
-                        <th scope="row">
+                        <th>
                           <div className="form-check form-check-align">
                             <input
                               className="form-check-input"
                               type="checkbox"
                               id="gridCheck"
-                              name="document_chk"
-                              defaultValue={row.selected}
-                              checked={row.selected}
-                              onChange={e => {
-                                this.selectDocument(e, row);
-                              }}
                             />
                           </div>
                         </th>
-                        <td>{row.docname}</td>
-                        <td>{row.dateuploaded}</td>
-                        <td>{row.whouploaded}</td>
+                        <th>Document Name</th>
+                        <th>Date</th>
+                        <th>Who Uploaded</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                  </table>
+                </div>
+
+                <div
+                  className={`${styles["document-Tabel"]} ${styles["scroll-table"]}`}
+                >
+                  <table className={styles["table-Body"]}>
+                    <tbody>
+                      {this.state.documents.map(row => (
+                        <tr>
+                          <td>
+                            <div className="form-check form-check-align">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                id="gridCheck"
+                                name="document_chk"
+                                defaultValue={row.selected}
+                                checked={row.selected}
+                                onChange={e => {
+                                  this.selectDocument(e, row);
+                                }}
+                              />
+                            </div>
+                          </td>
+                          <td>{row.docname}</td>
+                          <td>{row.dateuploaded}</td>
+                          <td>{row.whouploaded}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
               </div>
             </div>
               )}
           </div>
     </div>
-    </div>
+  </div>
   );
   }
 }
