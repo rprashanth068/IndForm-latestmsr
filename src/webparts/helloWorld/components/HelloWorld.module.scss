@@ -23,11 +23,26 @@
     .flex1 {
       flex: 1;
     }
+    .flex2 {
+      flex: 2;
+      .alignCheckbox {
+        margin-top: 33px;
+        margin-left: 10px;
+        input[type="checkbox"] {
+          height: 20px;
+          width: 20px;
+          position: relative;
+          top: -4px;
+        }
+      }
+    }
   }
 
   .headerRow {
     background-color: #52525B;
     margin: 0;
+    padding: 0 10px;
+    height: 24px;
     .flex1 {
       flex: 1;
     }
@@ -41,7 +56,7 @@
       flex: 7;
     }
     .toggleContainer {
-      padding-top: 10px;
+      padding-top: 5px;
       .toggleIcon {
         top: 2px;
         position: relative;
@@ -92,7 +107,11 @@
   .addressRow {
     .flex1 {
       flex: 1;
+      textArea {
+        height: 100px;
+      }
     }
+    
   }
 
   .parentRow {
@@ -254,7 +273,7 @@
       color:black;
       vertical-align: top;
     }
-    .align-checkbox{
+    .alignCheckbox{
       padding-top: 30px;
     }
   }
@@ -320,7 +339,7 @@
     text-align: center;
   }
   
-  .myform{
+  .myform {
     border: 1px solid #52525B;
     background-color: #cccccc;
     padding-left: 10px;
@@ -328,6 +347,9 @@
     overflow-y: scroll;
     max-height: 900px;
     padding-top: 10px;
+    input {
+      border: 1px solid #333;
+    }
   }
   
   
@@ -338,13 +360,25 @@
     padding: 0px;
   }
   .contactHeader{
-    background-color: #000033;
-    height: 34px;
-    color: white;
-    font-size: 15px;
-    margin: 0px;
-    padding: 10px;
+    background-color: #003;
+    height: 26px;
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 7px 10px;
   }
+
+/*   .contact-header{
+    background-color: #003;
+    height: 34px;
+    color: #fff;
+    font-size: 15px;
+    margin: 0 0 0 0;
+    padding-top: 11px;
+    margin-left: -4px;
+    padding-left: 11px; */
+
   .contact-toolbar{
     background-color: #52525B;
     height: 34px;
@@ -352,17 +386,17 @@
     color: white;
   }
   .saveicons{
-    margin: 2px 5px;
-    padding: 2px;
-    margin-top: 5px;
+    margin: 5px;
   }
   .deleteicons{
     margin: 2px;
     padding: 2px;
   }
-  .editicons{
-    margin: 2px;
-    padding: 2px;
+  .commentsLabel {
+    margin: 8px 0;
+  }
+  .editIcons{
+    margin: 0px 2px;
   }
   
       .togglecontrol {
@@ -382,11 +416,7 @@
        .container myform{
         font-size: 12px;
       }
-  
-  .homephn {
-    width: 100px;
-  
-  }
+
   .mobileno {
     width: 100px;
     margin-left:-70px;
@@ -413,13 +443,11 @@
     margin-top: 10px;
     margin-left: 20px;
   }
-  .contry{
+  .country{
     width: 150px;
-    margin-left: -150px;
   }
   .postalcode{
     width: 150px;
-    margin-left: -150px;
     margin-top: 10px;
   }
   .email{
@@ -456,21 +484,32 @@
   .icons-align{
     margin-top: 0px;
     margin-left: -40px;
-    padding:  2px 0 0 30px;
-  
+    padding:  2px 0 0 30px
   
   }
   
-  .custom-form-input{
-    margin-bottom: 2px!important;
-  }
+  .customFormInputContainer {
+    margin-bottom: 0px;
+    .customFormInput {
+      margin-bottom: 2px!important;
+      display: flex;
+      .inputContainer {
+        flex: 10;
+      }
+      .iconContainer {
+        width: 30px;
+        padding-top: 8px;
+        text-align: center;
+      }
+    }
+  } 
   
   .scroll-table{
     max-height: 150px;
     max-width: 1115px;
+    border-right: 1px solid #000;
     overflow-y: scroll;
     padding-right: 0px;
-    margin-right: 10px;
     margin-top: -5px;
   }
   tbody{
@@ -510,14 +549,14 @@
     width:100px;
   }
   td:nth-child(4){
-    width:150px;
+    width: 159px;
   }
   
   th:nth-child(3){
     width:100px;
   }
   th:nth-child(4){
-    width:170px;
+    width:176px;
   }
   thead{
      background-color: rgba(0,0,0, 0.16);
@@ -547,11 +586,10 @@
   .table-striped tbody tr:nth-of-type(odd) {
     background-color: #e9ecefc7;
   }
-  .togglespan{
-    padding-top: 3px;
+  .togglespan {
     display: inline-block;
   }
-  .toggleupperspace{
+  .toggleupperspace {
     padding-top:25px;
     margin-left: 25px;
   }
@@ -573,7 +611,7 @@
   .horizontalSeparator {
     border: none;
     height: 1px;
-    background-color:rgba(33, 33, 33, 0.75);
+    border-top: 1px solid #333;
   }
   label {
     display: inline-block;
@@ -696,87 +734,94 @@
 //Document table end
 
 
-.comments-Tabel{
-    
+  .commentsTable  {
         
-  .table-Head{
-   color: #333;
-   font-family: Helvetica, Arial, sans-serif;
-   border-collapse: collapse; 
-   border-spacing: 0;
-   width: 100%; 
-   thead{  
-     
-     td, th {  
-       border-left: 1px solid black; /* No more visible border */
-       border-right: 1px solid black; /* No more visible border */
-       border-top: 1px solid black; /* No more visible border */
-       height: 30px; 
-       transition: all 0.3s;  /* Simple transition for hover effect */
-       color: black;
-       border-spacing: 0;
-       padding: 5px;
-   }
-   
-   th {  
-       background: #DFDFDF;  /* Darken header a bit */
-       font-weight: bold;
-   }
-   
-   td {  
-       background: #FAFAFA;
-       text-align: center;
-   }
- }
- 
- 
- 
- /* Cells in even rows (2,4,6...) are one color */        
- tr:nth-child(even) td { background: #F1F1F1; }   
- 
- /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
- tr:nth-child(odd) td { background: #FEFEFE; } 
-
+    .table-Head{
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    border-collapse: collapse; 
+    border-spacing: 0;
+    width: 100%; 
+    thead{  
+      
+      td, th {  
+        border-left: 1px solid black; /* No more visible border */
+        border-right: 1px solid black; /* No more visible border */
+        border-top: 1px solid black; /* No more visible border */
+        height: 30px; 
+        transition: all 0.3s;  /* Simple transition for hover effect */
+        color: black;
+        border-spacing: 0;
+        padding: 5px;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+    }
+    
+    th {  
+        background: #DFDFDF;  /* Darken header a bit */
+        font-weight: bold;
+    }
+    
+    td {  
+        background: #FAFAFA;
+        text-align: center;
+    }
   }
   
-  .table-Body{
-   color: #333;
-   font-family: Helvetica, Arial, sans-serif;
-   border-collapse: collapse; 
-   border-spacing: 0;
-   width: 100%; 
-   tbody{  
-     
-     td, th {  
-       border-left: 1px solid black; /* No more visible border */
-       height: 30px; 
-       transition: all 0.3s;  /* Simple transition for hover effect */
-       color: black;
-       border-spacing: 0;
-       padding: 5px;
-   }
-   
-   th {  
-       background: #DFDFDF;  /* Darken header a bit */
-       font-weight: bold;
-   }
-   
-   td {  
-       background: #FAFAFA;
-       text-align: center;
-   }
- }
- 
- 
- 
- /* Cells in even rows (2,4,6...) are one color */        
- tr:nth-child(even) td { background: #F1F1F1; }   
- 
- /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
- tr:nth-child(odd) td { background: #FEFEFE; } 
- tr:nth-last-child() td { background: #FEFEFE; } 
- 
+  
+  
+  /* Cells in even rows (2,4,6...) are one color */        
+  tr:nth-child(even) td { background: #F1F1F1; }   
+  
+  /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
+  tr:nth-child(odd) td { background: #FEFEFE; } 
+
+    }
+    
+    .table-Body{
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    border-collapse: collapse; 
+    border-spacing: 0;
+    width: 100%; 
+    tbody{  
+      
+      td, th {  
+        border-left: 1px solid black; /* No more visible border */
+        height: 30px; 
+        transition: all 0.3s;  /* Simple transition for hover effect */
+        color: black;
+        border-spacing: 0;
+        padding: 5px;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+    }
+    
+    th {  
+        background: #DFDFDF;  /* Darken header a bit */
+        font-weight: bold;
+    }
+    
+    td {  
+        background: #FAFAFA;
+        text-align: center;
+    }
   }
+  
+  
+  
+  /* Cells in even rows (2,4,6...) are one color */        
+  tr:nth-child(even) td { background: #F1F1F1; }   
+  
+  /* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
+  tr:nth-child(odd) td { background: #FEFEFE; } 
+  tr:nth-last-child() td { background: #FEFEFE; } 
+  
+    }
      
 
 }
